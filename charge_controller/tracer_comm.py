@@ -161,7 +161,7 @@ def cal_cc3(set_it=0, new_val=0):
 
 def get_data(device_name, dev_id):
     instrument = minimalmodbus.Instrument(device_name, int(
-        dev_id))  # port name, slave address (in decimal)
+        dev_id))  # port name, subordinate address (in decimal)
     instrument.serial.baudrate = 115200
     instrument.serial.databits = 8
     instrument.serial.parity = 'N'
@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
     if(len(sys.argv) > 2):
         instrument = minimalmodbus.Instrument(sys.argv[1], int(
-            sys.argv[2]))  # port name, slave address (in decimal)
+            sys.argv[2]))  # port name, subordinate address (in decimal)
         instrument.serial.baudrate = 115200
         instrument.serial.databits = 8
         instrument.serial.parity = 'N'
